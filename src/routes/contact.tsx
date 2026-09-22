@@ -1,0 +1,6 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { PageIntro } from "@/components/site/site-shell";
+import { InquiryForm } from "@/components/site/inquiry-form";
+
+export const Route = createFileRoute("/contact")({head:()=>({meta:[{title:"Замовити проєкт — ІБП"},{name:"description",content:"Зв’язок з Інженерним бюро проєктів: телефон, Telegram, email та форма запиту."},{property:"og:title",content:"Контакти — Інженерне бюро проєктів"},{property:"og:description",content:"Опишіть задачу для інженерного проєктування або зв’яжіться з менеджером."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:Contact});
+function Contact(){return <><PageIntro code="04" title="Маєте задачу?">Давайте її спроєктуємо. Надішліть короткий опис або зв’яжіться з менеджером напряму.</PageIntro><section className="section"><div className="shell contact-grid"><aside className="contact-info"><div className="section-code">Контакт / Менеджер</div><div className="contact-person"><strong>Пасічник Олег</strong><span>менеджер</span></div><div className="contact-links"><a href="tel:+380993173009">+380 99 317 30 09</a><a href="https://t.me/GIP100" target="_blank" rel="noreferrer">Telegram @GIP100</a><a href="mailto:profipro@ukr.net">profipro@ukr.net</a></div></aside><InquiryForm/></div></section></>}
