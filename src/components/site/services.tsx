@@ -18,5 +18,5 @@ export const services = [
 
 export function ServicesList({ limit }: { limit?: number }) {
   const [open, setOpen] = useState<number | null>(null);
-  return <div className="services-list">{services.slice(0, limit).map(([name, description], i) => <article key={name} className="service-row" data-open={open === i} tabIndex={0} onClick={() => setOpen(open === i ? null : i)} onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setOpen(open === i ? null : i); } }}><span className="service-number">{String(i + 1).padStart(2,"0")}</span><div className="service-main"><h3>{name}</h3><p>{description}</p></div><TechnicalArt variant={i} className="service-art" /></article>)}</div>;
+  return <div className="services-list">{services.slice(0, limit).map(([name, description], i) => <article key={name} className="service-row" data-open={open === i} tabIndex={0} role="button" aria-expanded={open === i} onClick={() => setOpen(open === i ? null : i)} onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setOpen(open === i ? null : i); } }}><span className="service-number">{String(i + 1).padStart(2,"0")}</span><div className="service-main"><h3>{name}</h3><p>{description}</p></div><TechnicalArt variant={i} className="service-art" /></article>)}</div>;
 }
