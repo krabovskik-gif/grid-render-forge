@@ -26,7 +26,7 @@ export function SiteHeader() {
     <header className={compact ? "site-header site-header--compact" : "site-header"}>
       <div className="scroll-progress" style={{ transform: `scaleX(${progress})` }} />
       <div className="shell flex h-full items-center justify-between gap-6">
-        <Link to="/" className="brand" aria-label="Інженерне бюро проєктів — головна"><small>ІБП</small><span>Інженерне бюро проєктів</span></Link>
+        <Link to="/" className="brand" aria-label="Інженерне бюро проєктів — головна"><small>ІБП</small><span><em>Engineering Design Bureau</em>Інженерне бюро проєктів</span></Link>
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Головна навігація">
           {nav.map(([to, label]) => <Link key={to} to={to} activeOptions={{ exact: to === "/" }} activeProps={{ className: "nav-link nav-link--active" }} className="nav-link">{label}</Link>)}
         </nav>
